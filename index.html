@@ -1,859 +1,1195 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portal de Apoio ao Estudante</title>
+```
+<title>TAKECARE - O Cuidado que Salva Mulheres</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #fff8fb;
+        color: #333;
+        line-height: 1.7;
+    }
+
+    header {
+        background: #65156f;
+        color: white;
+        padding: 22px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .logo {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+
+    .sublogo {
+        font-size: 14px;
+        margin-top: 3px;
+        letter-spacing: 1px;
+    }
+
+    nav {
+        margin-top: 15px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 5px 10px;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: #ffd3e7;
+    }
+
+    section {
+        padding: 60px 10%;
+    }
+
+    .inicio {
+        min-height: 78vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        background:
+            linear-gradient(
+                rgba(50, 10, 60, 0.78),
+                rgba(110, 15, 70, 0.78)
+            ),
+            url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=80")
+            center/cover;
+    }
+
+    .inicio-conteudo {
+        max-width: 850px;
+    }
+
+    .inicio h1 {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(38px, 6vw, 70px);
+        line-height: 1.1;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+    }
+
+    .autora {
+        font-size: 14px !important;
+        letter-spacing: 3px;
+        font-weight: bold;
+        margin-bottom: 18px;
+    }
+
+    .inicio h2 {
+        color: white;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .inicio p {
+        font-size: 19px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .botao {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 22px;
+        border: none;
+        border-radius: 8px;
+        background: #7b1fa2;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .inicio .botao {
+        background: white;
+        color: #65156f;
+    }
+
+    .botao:hover {
+        opacity: 0.85;
+    }
+
+    h2 {
+        text-align: center;
+        color: #65156f;
+        margin-bottom: 30px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 32px;
+    }
+
+    .texto-intro {
+        max-width: 850px;
+        margin: 0 auto 35px;
+        text-align: center;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 3px 12px #ddd;
+        border-top: 4px solid #7b1fa2;
+    }
+
+    .card h3 {
+        color: #ad1457;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+
+    .informacao-extra {
+        margin-top: 35px;
+        background: #f7eaf8;
+        padding: 25px;
+        border-left: 5px solid #7b1fa2;
+        border-radius: 8px;
+    }
+
+    .informacao-extra h3 {
+        color: #65156f;
+        margin-bottom: 10px;
+    }
+
+    .noticias {
+        background: #fff0f5;
+    }
+
+    .noticias-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .noticia {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 3px 12px #ddd;
+    }
+
+    .noticia span {
+        display: inline-block;
+        background: #65156f;
+        color: white;
+        padding: 4px 9px;
+        border-radius: 5px;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .noticia h3 {
+        color: #ad1457;
+        margin-bottom: 10px;
+    }
+
+    .noticia a {
+        color: #65156f;
+        font-weight: bold;
+    }
+
+    .escuta {
+        background: #f3e5f5;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 30px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 3px 12px #ddd;
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    textarea {
+        width: 100%;
+        margin-top: 5px;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+    }
+
+    textarea {
+        height: 140px;
+        resize: vertical;
+    }
+
+    form button {
+        margin-top: 15px;
+        padding: 12px 20px;
+        background: #65156f;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    form button:hover {
+        background: #4b1052;
+    }
+
+    #mensagem {
+        margin-top: 15px;
+        color: #65156f;
+        font-weight: bold;
+    }
+
+    .ajuda {
+        text-align: center;
+        background: #fff5f8;
+    }
+
+    .canais {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .canal {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 3px 12px #ddd;
+    }
+
+    .numero {
+        font-size: 35px;
+        font-weight: bold;
+        color: #ad1457;
+        margin: 10px;
+    }
+
+    .quiz {
+        max-width: 750px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 3px 12px #ddd;
+    }
+
+    .pergunta {
+        margin-bottom: 25px;
+    }
+
+    .pergunta h3 {
+        color: #65156f;
+        margin-bottom: 10px;
+    }
+
+    .pergunta label {
+        font-weight: normal;
+        margin: 8px 0;
+    }
+
+    #resultado {
+        margin-top: 20px;
+        color: #65156f;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .referencias {
+        background: #f3e5f5;
+    }
+
+    .referencias ul {
+        max-width: 850px;
+        margin: auto;
+        padding-left: 25px;
+    }
+
+    .referencias li {
+        margin-bottom: 15px;
+    }
+
+    .referencias a {
+        color: #65156f;
+        font-weight: bold;
+    }
+
+    footer {
+        background: #29102f;
+        color: white;
+        text-align: center;
+        padding: 30px;
+    }
+
+    footer p {
+        margin: 5px;
+    }
+
+    #topo {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 45px;
+        height: 45px;
+        border: none;
+        border-radius: 50%;
+        background: #65156f;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        display: none;
+    }
+
+    @media (max-width: 800px) {
+
+        .cards {
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        html {
-            scroll-behavior: smooth;
+        .noticias-grid {
+            grid-template-columns: 1fr;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #fff8fc;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        header {
-            background: #6a1b9a;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        header h1 {
-            margin-bottom: 12px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 5px 10px;
-            font-weight: bold;
-            display: inline-block;
-        }
-
-        nav a:hover {
-            color: #ffd1ec;
+        .canais {
+            grid-template-columns: 1fr;
         }
 
         section {
-            padding: 60px 10%;
+            padding: 45px 7%;
+        }
+    }
+
+    @media (max-width: 550px) {
+
+        header {
+            padding: 16px 10px;
+        }
+
+        .logo {
+            font-size: 24px;
+        }
+
+        .sublogo {
+            font-size: 12px;
+        }
+
+        nav a {
+            margin: 4px;
+            font-size: 13px;
         }
 
         .inicio {
-            min-height: 75vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            background:
-                linear-gradient(
-                    rgba(70, 20, 90, 0.75),
-                    rgba(120, 20, 80, 0.75)
-                ),
-                url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80")
-                center/cover;
+            min-height: 70vh;
+            padding: 60px 7%;
         }
 
-        .inicio div {
-            max-width: 750px;
+        .inicio h1 {
+            font-size: 38px;
         }
 
         .inicio h2 {
-            font-size: 42px;
-            margin-bottom: 20px;
+            font-size: 20px;
         }
 
         .inicio p {
-            font-size: 19px;
-        }
-
-        .botao {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 22px;
-            border: none;
-            border-radius: 8px;
-            background: #6a1b9a;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .inicio .botao {
-            background: white;
-            color: #6a1b9a;
-        }
-
-        .botao:hover {
-            opacity: 0.85;
-        }
-
-        h2 {
-            text-align: center;
-            color: #6a1b9a;
-            margin-bottom: 30px;
-            font-size: 30px;
-        }
-
-        .introducao {
-            max-width: 800px;
-            margin: 0 auto 30px;
-            text-align: center;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px #ddd;
-        }
-
-        .card h3 {
-            color: #ad1457;
-            margin-bottom: 10px;
-        }
-
-        .escuta {
-            background: #f3e5f5;
-        }
-
-        form {
-            max-width: 600px;
-            margin: 30px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px #ddd;
-        }
-
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        textarea {
-            width: 100%;
-            margin-top: 5px;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
             font-size: 16px;
         }
 
-        textarea {
-            height: 140px;
-            resize: vertical;
+        .cards {
+            grid-template-columns: 1fr;
         }
 
-        form button {
-            margin-top: 15px;
-            padding: 12px 20px;
-            background: #6a1b9a;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
+        h2 {
+            font-size: 27px;
         }
 
-        form button:hover {
-            background: #4a148c;
-        }
-
-        #mensagem {
-            margin-top: 15px;
-            color: #6a1b9a;
-            font-weight: bold;
-        }
-
-        .ajuda {
-            text-align: center;
-            background: #fff0f5;
-        }
-
-        .numero {
-            font-size: 32px;
-            font-weight: bold;
-            color: #ad1457;
-            margin: 10px;
-        }
-
+        .card,
+        .noticia,
+        .canal,
+        form,
         .quiz {
-            max-width: 750px;
-            margin: auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px #ddd;
+            padding: 20px;
         }
+    }
+</style>
+```
 
-        .pergunta {
-            margin-bottom: 25px;
-        }
-
-        .pergunta h3 {
-            color: #6a1b9a;
-            margin-bottom: 10px;
-        }
-
-        .pergunta label {
-            font-weight: normal;
-            margin: 8px 0;
-        }
-
-        #resultado {
-            margin-top: 20px;
-            color: #6a1b9a;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .referencias {
-            background: #f3e5f5;
-        }
-
-        .referencias ul {
-            max-width: 850px;
-            margin: auto;
-            padding-left: 25px;
-        }
-
-        .referencias li {
-            margin-bottom: 15px;
-        }
-
-        .referencias a {
-            color: #6a1b9a;
-            font-weight: bold;
-        }
-
-        footer {
-            background: #32103f;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        #topo {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            width: 45px;
-            height: 45px;
-            border: none;
-            border-radius: 50%;
-            background: #6a1b9a;
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            display: none;
-        }
-
-        @media (max-width: 700px) {
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 45px 7%;
-            }
-
-            .inicio {
-                min-height: 70vh;
-            }
-
-            .inicio h2 {
-                font-size: 30px;
-            }
-
-            nav a {
-                margin: 4px;
-                font-size: 14px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- CABEÇALHO -->
+```
+<header>
 
-    <header>
+    <div class="logo">
+        TAKECARE
+    </div>
 
-        <h1>💜 Portal de Apoio ao Estudante</h1>
+    <div class="sublogo">
+        O CUIDADO QUE SALVA MULHERES
+    </div>
 
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#informacoes">Informações</a>
-            <a href="#escuta">Portal de Escuta</a>
-            <a href="#quiz">Quiz</a>
-            <a href="#referencias">Referências</a>
-        </nav>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#informacoes">Entenda</a>
+        <a href="#noticias">Notícias</a>
+        <a href="#escuta">Escuta</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#referencias">Fontes</a>
+    </nav>
 
-    </header>
+</header>
 
 
-    <main>
+<main>
 
-        <!-- PÁGINA INICIAL -->
+    <section class="inicio" id="inicio">
 
-        <section class="inicio" id="inicio">
+        <div class="inicio-conteudo">
 
-            <div>
+            <h1>TAKECARE</h1>
 
-                <h2>Violência contra a Mulher</h2>
+            <p class="autora">
+                POR RUBY GARCIA
+            </p>
+
+            <h2>
+                O cuidado que salva mulheres
+            </h2>
+
+            <p>
+                Informação, respeito e conhecimento podem ajudar
+                a reconhecer situações de violência e encontrar
+                caminhos para buscar ajuda.
+            </p>
+
+            <a href="#informacoes" class="botao">
+                Conheça o tema
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section id="informacoes">
+
+        <h2>Entendendo a violência</h2>
+
+        <p class="texto-intro">
+            A violência contra a mulher não acontece somente quando
+            existe uma agressão física. Ela também pode aparecer em
+            ameaças, humilhações, controle, perseguição, violência
+            sexual, destruição de bens e situações de violência
+            praticadas pela internet.
+        </p>
+
+        <p class="texto-intro">
+            Reconhecer esses comportamentos é importante porque
+            muitas situações começam de maneira aparentemente
+            pequena e podem se tornar mais graves. Nenhuma mulher
+            deve ser culpada pela violência que sofreu. A responsabilidade
+            é sempre de quem pratica a violência.
+        </p>
+
+        <div class="cards">
+
+            <article class="card">
+
+                <h3>Violência Física</h3>
 
                 <p>
-                    Informação, respeito e acolhimento são importantes
-                    para reconhecer situações de violência e buscar ajuda.
+                    Acontece quando uma pessoa utiliza força física
+                    para machucar ou tentar machucar uma mulher.
+                    Empurrões, tapas, socos, chutes e outras agressões
+                    são exemplos.
                 </p>
 
-                <a href="#informacoes" class="botao">
-                    Conheça o tema
+            </article>
+
+
+            <article class="card">
+
+                <h3>Violência Psicológica</h3>
+
+                <p>
+                    Pode envolver ameaças, humilhações, chantagens,
+                    controle, isolamento, perseguição e atitudes
+                    destinadas a diminuir a autoestima ou causar
+                    sofrimento emocional.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>Violência Sexual</h3>
+
+                <p>
+                    Acontece quando uma mulher é forçada, ameaçada
+                    ou pressionada a participar de uma situação
+                    sexual contra sua vontade.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>Violência Patrimonial</h3>
+
+                <p>
+                    Pode ocorrer quando dinheiro, documentos,
+                    objetos, bens ou recursos de uma mulher são
+                    destruídos, escondidos, retidos ou controlados.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>Violência Moral</h3>
+
+                <p>
+                    Pode envolver calúnia, difamação ou injúria,
+                    prejudicando a imagem, a honra e a dignidade
+                    da mulher.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>Violência Digital</h3>
+
+                <p>
+                    Pode acontecer por meio de redes sociais,
+                    mensagens e outras plataformas. Ameaças,
+                    perseguição e divulgação de conteúdo íntimo
+                    sem consentimento são exemplos.
+                </p>
+
+            </article>
+
+        </div>
+
+
+        <div class="informacao-extra">
+
+            <h3>Por que falar sobre isso?</h3>
+
+            <p>
+                Falar sobre violência ajuda a combater a ideia de que
+                agressões são problemas que devem ser escondidos.
+                Informação pode ajudar vítimas, familiares, amigos,
+                colegas e estudantes a reconhecer sinais de violência
+                e procurar uma rede de proteção.
+            </p>
+
+            <br>
+
+            <p>
+                Em uma situação de violência, é importante procurar
+                pessoas de confiança e serviços especializados.
+                Em emergências, deve-se buscar ajuda imediatamente.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="noticias" id="noticias">
+
+        <h2>Notícias e acontecimentos recentes</h2>
+
+        <p class="texto-intro">
+            A violência contra as mulheres continua sendo um problema
+            presente no Brasil. Veja alguns acontecimentos recentes
+            divulgados por fontes jornalísticas e instituições oficiais.
+        </p>
+
+        <div class="noticias-grid">
+
+            <article class="noticia">
+
+                <span>FEVEREIRO DE 2026</span>
+
+                <h3>
+                    Mulher é vítima de feminicídio no Rio mesmo com
+                    medida protetiva
+                </h3>
+
+                <p>
+                    Em fevereiro de 2026, a Agência Brasil noticiou
+                    o caso de uma mulher de 25 anos que foi morta no
+                    Rio de Janeiro mesmo possuindo uma medida protetiva
+                    contra o ex-marido. O caso chamou atenção para a
+                    importância do funcionamento da rede de proteção.
+                </p>
+
+                <br>
+
+                <a
+                    href="https://agenciabrasil.ebc.com.br/geral/noticia/2026-02/mesmo-com-medida-protetiva-mulher-e-vitima-de-feminicidio-no-rio"
+                    target="_blank"
+                >
+                    Ler notícia na Agência Brasil
+                </a>
+
+            </article>
+
+
+            <article class="noticia">
+
+                <span>MAIO DE 2026</span>
+
+                <h3>
+                    São Paulo registra aumento de feminicídios
+                </h3>
+
+                <p>
+                    Dados divulgados em maio de 2026 mostraram que
+                    São Paulo registrou 30 vítimas de feminicídio
+                    em março. No primeiro trimestre do ano, foram
+                    registradas 86 vítimas no estado, segundo dados
+                    da Secretaria da Segurança Pública.
+                </p>
+
+                <br>
+
+                <a
+                    href="https://agenciabrasil.ebc.com.br/direitos-humanos/noticia/2026-05/sp-feminicidio-aumenta-41-violacao-de-medida-protetiva-sobe-319"
+                    target="_blank"
+                >
+                    Ler notícia na Agência Brasil
+                </a>
+
+            </article>
+
+
+            <article class="noticia">
+
+                <span>MAIO DE 2026</span>
+
+                <h3>
+                    Caso de agressão grave é julgado no Paraná
+                </h3>
+
+                <p>
+                    Em maio de 2026, a Agência Brasil noticiou uma
+                    decisão da Justiça do Paraná relacionada a um
+                    homem acusado de atear fogo na companheira em
+                    2025. O caso mostra como agressões graves contra
+                    mulheres também chegam ao sistema de Justiça.
+                </p>
+
+                <br>
+
+                <a
+                    href="https://agenciabrasil.ebc.com.br/justica/noticia/2026-05/justica-do-parana-reduz-pena-de-homem-que-ateou-fogo-na-companheira"
+                    target="_blank"
+                >
+                    Ler notícia na Agência Brasil
+                </a>
+
+            </article>
+
+
+            <article class="noticia">
+
+                <span>MAIO DE 2026</span>
+
+                <h3>
+                    Novas medidas contra violência física e digital
+                </h3>
+
+                <p>
+                    Em maio de 2026, o Governo Federal anunciou novas
+                    medidas para ampliar a proteção das mulheres,
+                    incluindo ações relacionadas ao combate ao
+                    feminicídio e à violência praticada no ambiente
+                    digital.
+                </p>
+
+                <br>
+
+                <a
+                    href="https://www.gov.br/mulheres/pt-br/central-de-conteudos/noticias/2026/maio/pacote-sancionado-pelo-presidente-lula-endurece-combate-ao-feminicidio-e-a-violencia-digital-contra-as-mulheres"
+                    target="_blank"
+                >
+                    Ler informação oficial
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <section class="escuta" id="escuta">
+
+        <h2>Portal de Escuta</h2>
+
+        <p class="texto-intro">
+            Este espaço é uma simulação para o projeto.
+            O texto digitado não é enviado para nenhum servidor
+            e não será armazenado.
+        </p>
+
+        <form id="formulario">
+
+            <label for="nome">
+                Nome (opcional)
+            </label>
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Digite seu nome"
+            >
+
+            <label for="desabafo">
+                Escreva seu desabafo
+            </label>
+
+            <textarea
+                id="desabafo"
+                placeholder="Escreva aqui o que você gostaria de dizer..."
+                required
+            ></textarea>
+
+            <button type="submit">
+                Enviar desabafo
+            </button>
+
+            <div id="mensagem"></div>
+
+        </form>
+
+        <p class="texto-intro">
+            Se você estiver passando por uma situação de violência
+            ou se sentir em perigo, procure um adulto de confiança,
+            familiares, professores, profissionais da escola ou
+            serviços especializados.
+        </p>
+
+    </section>
+
+
+    <section class="ajuda">
+
+        <h2>Canais de Ajuda</h2>
+
+        <div class="canais">
+
+            <div class="canal">
+
+                <h3>Ligue 180</h3>
+
+                <p class="numero">180</p>
+
+                <p>
+                    Central de Atendimento à Mulher.
+                    O serviço oferece orientação, acolhimento
+                    e informações sobre a rede de atendimento.
+                </p>
+
+                <a
+                    href="https://www.gov.br/mulheres/pt-br/ligue180"
+                    target="_blank"
+                    class="botao"
+                >
+                    Conhecer o serviço
                 </a>
 
             </div>
 
-        </section>
 
+            <div class="canal">
 
-        <!-- INFORMAÇÕES -->
+                <h3>Emergência</h3>
 
-        <section id="informacoes">
+                <p class="numero">190</p>
 
-            <h2>Entendendo a violência</h2>
+                <p>
+                    Em situações de emergência ou perigo imediato,
+                    procure ajuda de emergência.
+                </p>
 
-            <p class="introducao">
-                A violência contra a mulher pode acontecer de diferentes
-                formas. Conhecer essas formas ajuda a identificar situações
-                de violência e procurar apoio.
-            </p>
-
-            <div class="cards">
-
-                <article class="card">
-
-                    <h3>👊 Violência Física</h3>
-
-                    <p>
-                        Ações que causam ou tentam causar danos físicos,
-                        como agressões, empurrões e outras formas
-                        de violência corporal.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>🧠 Violência Psicológica</h3>
-
-                    <p>
-                        Ameaças, humilhações, controle, perseguição
-                        e comportamentos que prejudicam a autoestima
-                        e a saúde emocional.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>🛑 Violência Sexual</h3>
-
-                    <p>
-                        Situações de natureza sexual realizadas sem
-                        consentimento ou mediante ameaça ou coerção.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>💰 Violência Patrimonial</h3>
-
-                    <p>
-                        Envolve destruir, esconder, reter ou retirar
-                        dinheiro, documentos ou outros bens.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>📢 Violência Moral</h3>
-
-                    <p>
-                        Pode envolver atitudes como calúnia,
-                        difamação e injúria.
-                    </p>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>📱 Violência Digital</h3>
-
-                    <p>
-                        Ameaças, perseguições, humilhações e exposição
-                        indevida também podem acontecer pela internet.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- PORTAL DE ESCUTA -->
-
-        <section class="escuta" id="escuta">
-
-            <h2>💜 Portal de Escuta</h2>
-
-            <p class="introducao">
-                Este formulário é apenas uma simulação para fins
-                educativos. Nenhuma informação será armazenada.
-            </p>
-
-            <form id="formulario">
-
-                <label for="nome">
-                    Nome (opcional)
-                </label>
-
-                <input
-                    type="text"
-                    id="nome"
-                    placeholder="Digite seu nome"
-                >
-
-
-                <label for="desabafo">
-                    Escreva seu desabafo
-                </label>
-
-                <textarea
-                    id="desabafo"
-                    placeholder="Escreva aqui..."
-                    required
-                ></textarea>
-
-
-                <button type="submit">
-                    Enviar desabafo
-                </button>
-
-                <div id="mensagem"></div>
-
-            </form>
-
-            <p class="introducao">
-                Se você estiver passando por uma situação difícil,
-                procure um professor, pedagogo, familiar ou outro
-                adulto de confiança.
-            </p>
-
-        </section>
-
-
-        <!-- CANAIS DE AJUDA -->
-
-        <section class="ajuda">
-
-            <h2>📞 Canais de Ajuda</h2>
-
-            <p>
-                O <strong>Ligue 180</strong> oferece orientação
-                e acolhimento relacionados à violência contra a mulher.
-            </p>
-
-            <p class="numero">180</p>
-
-            <p>
-                Em uma situação de emergência ou perigo imediato,
-                procure ajuda de emergência.
-            </p>
-
-            <p class="numero">190</p>
-
-            <a
-                href="https://www.gov.br/mulheres/pt-br/ligue180"
-                target="_blank"
-                class="botao"
-            >
-                Saiba mais sobre o Ligue 180
-            </a>
-
-        </section>
-
-
-        <!-- QUIZ -->
-
-        <section id="quiz">
-
-            <h2>🧠 Quiz</h2>
-
-            <div class="quiz">
-
-                <div class="pergunta">
-
-                    <h3>
-                        1. Qual atitude pode ser violência psicológica?
-                    </h3>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="q1"
-                            value="0"
-                        >
-                        Respeitar a opinião de alguém.
-                    </label>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="q1"
-                            value="1"
-                        >
-                        Humilhar e ameaçar constantemente.
-                    </label>
-
-                </div>
-
-
-                <div class="pergunta">
-
-                    <h3>
-                        2. O que fazer ao presenciar violência?
-                    </h3>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="q2"
-                            value="1"
-                        >
-                        Procurar ajuda de uma pessoa responsável.
-                    </label>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="q2"
-                            value="0"
-                        >
-                        Ignorar a situação.
-                    </label>
-
-                </div>
-
-
-                <div class="pergunta">
-
-                    <h3>
-                        3. Para que serve o Ligue 180?
-                    </h3>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="q3"
-                            value="1"
-                        >
-                        Orientação e acolhimento sobre violência
-                        contra a mulher.
-                    </label>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="q3"
-                            value="0"
-                        >
-                        Atendimento esportivo.
-                    </label>
-
-                </div>
-
-
-                <div class="pergunta">
-
-                    <h3>
-                        4. Qual atitude demonstra respeito?
-                    </h3>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="q4"
-                            value="1"
-                        >
-                        Respeitar os limites e o consentimento.
-                    </label>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="q4"
-                            value="0"
-                        >
-                        Controlar as amizades da pessoa.
-                    </label>
-
-                </div>
-
-
-                <div class="pergunta">
-
-                    <h3>
-                        5. Qual número deve ser acionado
-                        em uma emergência?
-                    </h3>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="q5"
-                            value="1"
-                        >
-                        190
-                    </label>
-
-                    <label>
-                        <input
-                            type="radio"
-                            name="q5"
-                            value="0"
-                        >
-                        123
-                    </label>
-
-                </div>
-
-
-                <button
-                    type="button"
+                <a
+                    href="tel:190"
                     class="botao"
-                    onclick="corrigirQuiz()"
                 >
-                    Ver resultado
-                </button>
-
-                <div id="resultado"></div>
+                    Ligar 190
+                </a>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- REFERÊNCIAS -->
+    <section id="quiz">
 
-        <section class="referencias" id="referencias">
+        <h2>Quiz</h2>
 
-            <h2>📚 Referências Confiáveis</h2>
-
-            <ul>
-
-                <li>
-                    <a
-                        href="https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/susp-mulheres/violencia-domestica-e-familiar"
-                        target="_blank"
-                    >
-                        Ministério da Justiça e Segurança Pública
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="https://www.gov.br/mulheres/pt-br"
-                        target="_blank"
-                    >
-                        Ministério das Mulheres
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm"
-                        target="_blank"
-                    >
-                        Lei Maria da Penha - Lei nº 11.340/2006
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="https://www.who.int/news-room/fact-sheets/detail/violence-against-women"
-                        target="_blank"
-                    >
-                        Organização Mundial da Saúde - OMS
-                    </a>
-                </li>
-
-            </ul>
-
-        </section>
-
-    </main>
-
-
-    <!-- RODAPÉ -->
-
-    <footer>
-
-        <p>
-            💜 Portal de Apoio ao Estudante
+        <p class="texto-intro">
+            Teste seus conhecimentos sobre violência,
+            respeito e formas de buscar ajuda.
         </p>
 
-        <p>
-            Projeto Individual - Violência contra a Mulher
-        </p>
+        <div class="quiz">
 
-        <p>
-            Informação • Respeito • Empatia • Acolhimento
-        </p>
+            <div class="pergunta">
 
-    </footer>
+                <h3>
+                    1. Qual situação pode ser violência psicológica?
+                </h3>
 
+                <label>
+                    <input type="radio" name="q1" value="0">
+                    Respeitar a opinião da pessoa.
+                </label>
 
-    <!-- BOTÃO VOLTAR AO TOPO -->
+                <label>
+                    <input type="radio" name="q1" value="1">
+                    Humilhar e ameaçar constantemente.
+                </label>
 
-    <button
-        id="topo"
-        onclick="voltarTopo()"
-        title="Voltar ao topo"
-    >
-        ↑
-    </button>
-
-
-    <!-- JAVASCRIPT -->
-
-    <script>
-
-        // Portal de Escuta
-
-        document
-            .getElementById("formulario")
-            .addEventListener("submit", function(event) {
-
-                event.preventDefault();
-
-                document
-                    .getElementById("mensagem")
-                    .textContent =
-                    "💜 Obrigado por compartilhar. " +
-                    "Você merece respeito, segurança e apoio.";
-
-                this.reset();
-
-            });
+            </div>
 
 
-        // Quiz
+            <div class="pergunta">
 
-        function corrigirQuiz() {
+                <h3>
+                    2. O que fazer ao presenciar uma situação
+                    de violência?
+                </h3>
 
-            let pontos = 0;
+                <label>
+                    <input type="radio" name="q2" value="1">
+                    Procurar ajuda de uma pessoa responsável.
+                </label>
 
-            for (let i = 1; i <= 5; i++) {
+                <label>
+                    <input type="radio" name="q2" value="0">
+                    Ignorar completamente a situação.
+                </label>
 
-                const resposta = document.querySelector(
-                    'input[name="q' + i + '"]:checked'
-                );
-
-                if (resposta) {
-                    pontos += Number(resposta.value);
-                }
-            }
-
-            const resultado =
-                document.getElementById("resultado");
-
-            if (pontos === 5) {
-
-                resultado.textContent =
-                    "🎉 Excelente! Você acertou 5 de 5!";
-
-            } else if (pontos >= 3) {
-
-                resultado.textContent =
-                    "👏 Muito bem! Você acertou " +
-                    pontos +
-                    " de 5.";
-
-            } else {
-
-                resultado.textContent =
-                    "📚 Você acertou " +
-                    pontos +
-                    " de 5. Continue estudando!";
-
-            }
-        }
+            </div>
 
 
-        // Botão voltar ao topo
+            <div class="pergunta">
 
-        window.addEventListener("scroll", function() {
+                <h3>
+                    3. Para que serve o Ligue 180?
+                </h3>
 
-            const botao =
-                document.getElementById("topo");
+                <label>
+                    <input type="radio" name="q3" value="1">
+                    Orientação e acolhimento relacionados
+                    à violência contra a mulher.
+                </label>
 
-            if (window.scrollY > 300) {
+                <label>
+                    <input type="radio" name="q3" value="0">
+                    Atendimento esportivo.
+                </label>
 
-                botao.style.display = "block";
+            </div>
 
-            } else {
 
-                botao.style.display = "none";
+            <div class="pergunta">
 
-            }
+                <h3>
+                    4. Qual atitude demonstra respeito?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q4" value="1">
+                    Respeitar limites e consentimento.
+                </label>
+
+                <label>
+                    <input type="radio" name="q4" value="0">
+                    Controlar as amizades da pessoa.
+                </label>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <h3>
+                    5. Qual número deve ser acionado
+                    em uma emergência?
+                </h3>
+
+                <label>
+                    <input type="radio" name="q5" value="1">
+                    190
+                </label>
+
+                <label>
+                    <input type="radio" name="q5" value="0">
+                    123
+                </label>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="botao"
+                onclick="corrigirQuiz()"
+            >
+                Ver resultado
+            </button>
+
+            <div id="resultado"></div>
+
+        </div>
+
+    </section>
+
+
+    <section class="referencias" id="referencias">
+
+        <h2>Fontes e Referências</h2>
+
+        <ul>
+
+            <li>
+                <a
+                    href="https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/susp-mulheres/violencia-domestica-e-familiar"
+                    target="_blank"
+                >
+                    Ministério da Justiça e Segurança Pública
+                </a>
+                — informações sobre violência doméstica e familiar.
+            </li>
+
+            <li>
+                <a
+                    href="https://www.gov.br/mulheres/pt-br"
+                    target="_blank"
+                >
+                    Ministério das Mulheres
+                </a>
+                — informações e políticas públicas de proteção
+                às mulheres.
+            </li>
+
+            <li>
+                <a
+                    href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm"
+                    target="_blank"
+                >
+                    Lei Maria da Penha
+                </a>
+                — Lei nº 11.340/2006.
+            </li>
+
+            <li>
+                <a
+                    href="https://www.who.int/news-room/fact-sheets/detail/violence-against-women"
+                    target="_blank"
+                >
+                    Organização Mundial da Saúde
+                </a>
+                — informações internacionais sobre violência
+                contra mulheres.
+            </li>
+
+            <li>
+                <a
+                    href="https://agenciabrasil.ebc.com.br/"
+                    target="_blank"
+                >
+                    Agência Brasil
+                </a>
+                — utilizada para os exemplos recentes
+                apresentados nesta página.
+            </li>
+
+        </ul>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        Informação, respeito e proteção.
+    </p>
+
+    <p>
+        Conhecimento também é uma forma de cuidado.
+    </p>
+
+</footer>
+
+
+<button
+    id="topo"
+    onclick="voltarTopo()"
+    title="Voltar ao topo"
+>
+    ↑
+</button>
+
+
+<script>
+
+    // Formulário de escuta
+
+    document
+        .getElementById("formulario")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            document
+                .getElementById("mensagem")
+                .textContent =
+                "Obrigado por compartilhar. " +
+                "Você merece respeito, segurança e apoio.";
+
+            this.reset();
 
         });
 
 
-        function voltarTopo() {
+    // Correção do quiz
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+    function corrigirQuiz() {
+
+        let pontos = 0;
+
+        for (let i = 1; i <= 5; i++) {
+
+            const resposta = document.querySelector(
+                'input[name="q' + i + '"]:checked'
+            );
+
+            if (resposta) {
+                pontos += Number(resposta.value);
+            }
 
         }
 
-    </script>
+        const resultado =
+            document.getElementById("resultado");
+
+        if (pontos === 5) {
+
+            resultado.textContent =
+                "Excelente! Você acertou 5 de 5 perguntas.";
+
+        } else if (pontos >= 3) {
+
+            resultado.textContent =
+                "Muito bem! Você acertou " +
+                pontos +
+                " de 5 perguntas.";
+
+        } else {
+
+            resultado.textContent =
+                "Você acertou " +
+                pontos +
+                " de 5. " +
+                "Continue estudando o conteúdo.";
+
+        }
+
+    }
+
+
+    // Botão voltar ao topo
+
+    window.addEventListener("scroll", function() {
+
+        const botao =
+            document.getElementById("topo");
+
+        if (window.scrollY > 300) {
+
+            botao.style.display = "block";
+
+        } else {
+
+            botao.style.display = "none";
+
+        }
+
+    });
+
+
+    function voltarTopo() {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+</script>
+```
 
 </body>
 
